@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Look of the sections written into Includes_Dock.xml by tools/make_docks.py -->
+<includes>
+	<!-- Dock: Left/Right picks a tab, Down (or OK) goes into its grid -->
+	<include name="DockListCommon">
+		<left>75</left>
+		<top>90</top>
+		<width>1350</width>
+		<height>80</height>
+		<orientation>horizontal</orientation>
+		<scrolltime tween="cubic" easing="out">300</scrolltime>
+		<onleft>9000</onleft>
+		<ondown>$PARAM[grid_id]</ondown>
+		<onback>9000</onback>
+		<itemlayout width="230" height="80">
+			<control type="label">
+				<width>215</width>
+				<height>80</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font32</font>
+				<textcolor>unfocused_text</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout width="230" height="80">
+			<control type="image">
+				<width>215</width>
+				<height>80</height>
+				<texture colordiffuse="button_focus">masks/categorywidget.png</texture>
+				<visible>Control.HasFocus($PARAM[id])</visible>
+			</control>
+			<control type="label">
+				<width>215</width>
+				<height>80</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font32</font>
+				<textcolor>white</textcolor>
+				<label>[B]$INFO[ListItem.Label][/B]</label>
+			</control>
+		</focusedlayout>
+	</include>
+	<!-- Grid of the tab chosen in the Dock, first tile on the left. Its look is the tab's display type (Set widgets);
+	     BigLandscape is the last, unconditioned layout. -->
+	<include name="DockGrid">
+		<include content="BusyListSpinner">
+			<param name="list_id" value="$PARAM[id]"/>
+			<param name="posy" value="300"/>
+		</include>
+		<control type="panel" id="$PARAM[id]">
+			<left>0</left>
+			<top>200</top>
+			<width>1380</width>
+			<height>860</height>
+			<orientation>vertical</orientation>
+			<scrolltime tween="cubic" easing="out">500</scrolltime>
+			<onup>$PARAM[dock_id]</onup>
+			<onleft>9000</onleft>
+			<onback>SetFocus($PARAM[id],0,absolute)</onback>
+			<onback>$PARAM[dock_id]</onback>
+			<itemlayout width="448" height="290" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),Category)">
+				<include content="DockIconTile">
+					<param name="bg" value="masks/categorywidget-unfocused.png"/>
+					<param name="bg_color" value="button_focus2"/>
+					<param name="text_color" value="unfocused_text"/>
+					<param name="label" value="$INFO[ListItem.Label]"/>
+				</include>
+			</itemlayout>
+			<focusedlayout width="448" height="290" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),Category)">
+				<include content="DockIconTile">
+					<param name="bg" value="masks/categorywidget.png"/>
+					<param name="bg_color" value="button_focus"/>
+					<param name="text_color" value="white"/>
+					<param name="label" value="[B]$INFO[ListItem.Label][/B]"/>
+				</include>
+			</focusedlayout>
+			<itemlayout width="276" height="430" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),BigPoster)">
+				<control type="group">
+					<left>68</left>
+					<top>15</top>
+					<include content="BigInfoWallMovieLayout">
+						<param name="focused" value="false" />
+					</include>
+				</control>
+			</itemlayout>
+			<focusedlayout width="276" height="430" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),BigPoster)">
+				<control type="group">
+					<depth>DepthContentPopout</depth>
+					<left>68</left>
+					<top>15</top>
+					<include content="BigInfoWallMovieLayout">
+						<param name="focused" value="true" />
+					</include>
+				</control>
+			</focusedlayout>
+			<itemlayout width="200" height="330" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),Poster)">
+				<control type="group">
+					<animation effect="zoom" end="75" center="auto" time="0" condition="true">Conditional</animation>
+					<left>-25</left>
+					<top>-37</top>
+					<include content="BigInfoWallMovieLayout">
+						<param name="focused" value="false" />
+					</include>
+				</control>
+			</itemlayout>
+			<focusedlayout width="200" height="330" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),Poster)">
+				<control type="group">
+					<depth>DepthContentPopout</depth>
+					<animation effect="zoom" end="75" center="auto" time="0" condition="true">Conditional</animation>
+					<left>-25</left>
+					<top>-37</top>
+					<include content="BigInfoWallMovieLayout">
+						<param name="focused" value="true" />
+					</include>
+				</control>
+			</focusedlayout>
+			<itemlayout width="330" height="220" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),Landscape)">
+				<control type="group">
+					<animation effect="zoom" end="75" center="auto" time="0" condition="true">Conditional</animation>
+					<left>-27</left>
+					<top>-12</top>
+					<include content="BigWideInfoWallMovieLayout">
+						<param name="focused" value="false" />
+						<param name="list_id" value="$PARAM[id]" />
+					</include>
+				</control>
+			</itemlayout>
+			<focusedlayout width="330" height="220" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),Landscape)">
+				<control type="group">
+					<depth>DepthContentPopout</depth>
+					<animation effect="zoom" end="75" center="auto" time="0" condition="true">Conditional</animation>
+					<left>-27</left>
+					<top>-12</top>
+					<include content="BigWideInfoWallMovieLayout">
+						<param name="focused" value="true" />
+						<param name="list_id" value="$PARAM[id]" />
+					</include>
+				</control>
+			</focusedlayout>
+			<itemlayout width="448" height="370" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),BigLandscapeInfo)">
+				<control type="group">
+					<left>68</left>
+					<top>15</top>
+					<include content="BigWideInfoWallMovieLayout">
+						<param name="focused" value="false" />
+						<param name="list_id" value="$PARAM[id]" />
+					</include>
+				</control>
+				<include content="DockInfoLines">
+					<param name="top" value="239"/>
+					<param name="width" value="380"/>
+					<param name="left" value="68"/>
+					<param name="text_color" value="unfocused_text"/>
+				</include>
+			</itemlayout>
+			<focusedlayout width="448" height="370" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),BigLandscapeInfo)">
+				<control type="group">
+					<depth>DepthContentPopout</depth>
+					<left>68</left>
+					<top>15</top>
+					<include content="BigWideInfoWallMovieLayout">
+						<param name="focused" value="true" />
+						<param name="list_id" value="$PARAM[id]" />
+					</include>
+				</control>
+				<include content="DockInfoLines">
+					<param name="top" value="239"/>
+					<param name="width" value="380"/>
+					<param name="left" value="68"/>
+					<param name="text_color" value="white"/>
+				</include>
+			</focusedlayout>
+			<itemlayout width="330" height="310" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),LandscapeInfo)">
+				<control type="group">
+					<animation effect="zoom" end="75" center="auto" time="0" condition="true">Conditional</animation>
+					<left>-27</left>
+					<top>-12</top>
+					<include content="BigWideInfoWallMovieLayout">
+						<param name="focused" value="false" />
+						<param name="list_id" value="$PARAM[id]" />
+					</include>
+				</control>
+				<include content="DockInfoLines">
+					<param name="top" value="200"/>
+					<param name="width" value="285"/>
+					<param name="left" value="20"/>
+					<param name="text_color" value="unfocused_text"/>
+				</include>
+			</itemlayout>
+			<focusedlayout width="330" height="310" condition="String.IsEqual(Container($PARAM[dock_id]).ListItem.Property(view),LandscapeInfo)">
+				<control type="group">
+					<depth>DepthContentPopout</depth>
+					<animation effect="zoom" end="75" center="auto" time="0" condition="true">Conditional</animation>
+					<left>-27</left>
+					<top>-12</top>
+					<include content="BigWideInfoWallMovieLayout">
+						<param name="focused" value="true" />
+						<param name="list_id" value="$PARAM[id]" />
+					</include>
+				</control>
+				<include content="DockInfoLines">
+					<param name="top" value="200"/>
+					<param name="width" value="285"/>
+					<param name="left" value="20"/>
+					<param name="text_color" value="white"/>
+				</include>
+			</focusedlayout>
+			<itemlayout width="448" height="290">
+				<control type="group">
+					<left>68</left>
+					<top>15</top>
+					<include content="BigWideInfoWallMovieLayout">
+						<param name="focused" value="false" />
+						<param name="list_id" value="$PARAM[id]" />
+					</include>
+				</control>
+			</itemlayout>
+			<focusedlayout width="448" height="290">
+				<control type="group">
+					<depth>DepthContentPopout</depth>
+					<left>68</left>
+					<top>15</top>
+					<include content="BigWideInfoWallMovieLayout">
+						<param name="focused" value="true" />
+						<param name="list_id" value="$PARAM[id]" />
+					</include>
+				</control>
+			</focusedlayout>
+			<content target="videos">$INFO[Container($PARAM[dock_id]).ListItem.Property(path)]</content>
+		</control>
+	</include>
+	<!-- Name and details under the picture, for the *Info display types -->
+	<include name="DockInfoLines">
+		<control type="label">
+			<left>$PARAM[left]</left>
+			<top>$PARAM[top]</top>
+			<width>$PARAM[width]</width>
+			<height>40</height>
+			<align>center</align>
+			<font>font27</font>
+			<textcolor>$PARAM[text_color]</textcolor>
+			<label>$INFO[ListItem.TVShowTitle,[B],[/B] - ]$INFO[ListItem.Label]</label>
+			<visible>String.IsEqual(ListItem.DBType,episode)</visible>
+		</control>
+		<control type="label">
+			<left>$PARAM[left]</left>
+			<top>$PARAM[top]</top>
+			<width>$PARAM[width]</width>
+			<height>40</height>
+			<align>center</align>
+			<font>font27</font>
+			<textcolor>$PARAM[text_color]</textcolor>
+			<label>[B]$INFO[ListItem.Label][/B]</label>
+			<visible>!String.IsEqual(ListItem.DBType,episode)</visible>
+		</control>
+		<control type="label">
+			<left>$PARAM[left]</left>
+			<top>$PARAM[top]</top>
+			<width>$PARAM[width]</width>
+			<height>40</height>
+			<align>center</align>
+			<font>font12</font>
+			<textcolor>grey</textcolor>
+			<animation effect="slide" end="0,40" time="0" condition="true">Conditional</animation>
+			<label>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E,  ]$VAR[DockInfoDate]</label>
+		</control>
+	</include>
+	<variable name="DockInfoDate">
+		<value condition="!String.IsEmpty(ListItem.Premiered)">$INFO[ListItem.Premiered]</value>
+		<value>$INFO[ListItem.Year]</value>
+	</variable>
+	<!-- A tile with an icon and a name, for lists without artwork (genres, networks) and for buttons -->
+	<include name="DockIconTile">
+		<control type="image">
+			<left>68</left>
+			<top>15</top>
+			<width>380</width>
+			<height>214</height>
+			<texture colordiffuse="$PARAM[bg_color]">$PARAM[bg]</texture>
+		</control>
+		<control type="image">
+			<left>198</left>
+			<top>35</top>
+			<width>120</width>
+			<height>120</height>
+			<aspectratio>keep</aspectratio>
+			<texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+		</control>
+		<control type="label">
+			<left>78</left>
+			<top>160</top>
+			<width>360</width>
+			<height>60</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font27</font>
+			<textcolor>$PARAM[text_color]</textcolor>
+			<label>$PARAM[label]</label>
+		</control>
+	</include>
+	<!-- Buttons sections (home): one look for all the buttons, chosen in Skin settings > Display type -->
+	<include name="DockButtonsPoster">
+		<left>0</left>
+		<top>90</top>
+		<width>1380</width>
+		<height>970</height>
+		<orientation>vertical</orientation>
+		<scrolltime tween="cubic" easing="out">500</scrolltime>
+		<onleft>9000</onleft>
+		<onback>9000</onback>
+		<itemlayout width="276" height="350">
+			<control type="image">
+				<left>20</left>
+				<top>15</top>
+				<width>236</width>
+				<height>320</height>
+				<texture colordiffuse="button_focus2">masks/categorywidget-unfocused.png</texture>
+			</control>
+			<control type="image">
+				<left>49</left>
+				<top>55</top>
+				<width>177</width>
+				<height>240</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="276" height="350">
+			<control type="image">
+				<left>20</left>
+				<top>15</top>
+				<width>236</width>
+				<height>320</height>
+				<texture colordiffuse="button_focus">masks/categorywidget.png</texture>
+			</control>
+			<control type="image">
+				<left>49</left>
+				<top>55</top>
+				<width>177</width>
+				<height>240</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DockButtonsPosterInfo">
+		<left>0</left>
+		<top>90</top>
+		<width>1380</width>
+		<height>970</height>
+		<orientation>vertical</orientation>
+		<scrolltime tween="cubic" easing="out">500</scrolltime>
+		<onleft>9000</onleft>
+		<onback>9000</onback>
+		<itemlayout width="276" height="410">
+			<control type="image">
+				<left>20</left>
+				<top>15</top>
+				<width>236</width>
+				<height>320</height>
+				<texture colordiffuse="button_focus2">masks/categorywidget-unfocused.png</texture>
+			</control>
+			<control type="image">
+				<left>49</left>
+				<top>55</top>
+				<width>177</width>
+				<height>240</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="label">
+				<left>20</left>
+				<top>340</top>
+				<width>236</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font27</font>
+				<textcolor>unfocused_text</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout width="276" height="410">
+			<control type="image">
+				<left>20</left>
+				<top>15</top>
+				<width>236</width>
+				<height>320</height>
+				<texture colordiffuse="button_focus">masks/categorywidget.png</texture>
+			</control>
+			<control type="image">
+				<left>49</left>
+				<top>55</top>
+				<width>177</width>
+				<height>240</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="label">
+				<left>20</left>
+				<top>340</top>
+				<width>236</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font27</font>
+				<textcolor>white</textcolor>
+				<label>[B]$INFO[ListItem.Label][/B]</label>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DockButtonsLandscape">
+		<left>0</left>
+		<top>90</top>
+		<width>1380</width>
+		<height>970</height>
+		<orientation>vertical</orientation>
+		<scrolltime tween="cubic" easing="out">500</scrolltime>
+		<onleft>9000</onleft>
+		<onback>9000</onback>
+		<itemlayout width="448" height="260">
+			<control type="image">
+				<left>20</left>
+				<top>15</top>
+				<width>408</width>
+				<height>230</height>
+				<texture colordiffuse="button_focus2">masks/categorywidget-unfocused.png</texture>
+			</control>
+			<control type="image">
+				<left>71</left>
+				<top>43</top>
+				<width>306</width>
+				<height>172</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="448" height="260">
+			<control type="image">
+				<left>20</left>
+				<top>15</top>
+				<width>408</width>
+				<height>230</height>
+				<texture colordiffuse="button_focus">masks/categorywidget.png</texture>
+			</control>
+			<control type="image">
+				<left>71</left>
+				<top>43</top>
+				<width>306</width>
+				<height>172</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DockButtonsLandscapeInfo">
+		<left>0</left>
+		<top>90</top>
+		<width>1380</width>
+		<height>970</height>
+		<orientation>vertical</orientation>
+		<scrolltime tween="cubic" easing="out">500</scrolltime>
+		<onleft>9000</onleft>
+		<onback>9000</onback>
+		<itemlayout width="448" height="320">
+			<control type="image">
+				<left>20</left>
+				<top>15</top>
+				<width>408</width>
+				<height>230</height>
+				<texture colordiffuse="button_focus2">masks/categorywidget-unfocused.png</texture>
+			</control>
+			<control type="image">
+				<left>71</left>
+				<top>43</top>
+				<width>306</width>
+				<height>172</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="label">
+				<left>20</left>
+				<top>250</top>
+				<width>408</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font27</font>
+				<textcolor>unfocused_text</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout width="448" height="320">
+			<control type="image">
+				<left>20</left>
+				<top>15</top>
+				<width>408</width>
+				<height>230</height>
+				<texture colordiffuse="button_focus">masks/categorywidget.png</texture>
+			</control>
+			<control type="image">
+				<left>71</left>
+				<top>43</top>
+				<width>306</width>
+				<height>172</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="label">
+				<left>20</left>
+				<top>250</top>
+				<width>408</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font27</font>
+				<textcolor>white</textcolor>
+				<label>[B]$INFO[ListItem.Label][/B]</label>
+			</control>
+		</focusedlayout>
+	</include>
+</includes>

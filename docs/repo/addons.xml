@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="skin.david.dockil" version="0.3.0" name="David-DockIL"
+	provider-name="David (based on POV-IL FENtastic by Ivar Brandt)">
+	<requires>
+		<!-- <import addon="xbmc.gui" version="5.17.0" /> -->
+		<import addon="script.fentastic.helper" />
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>https://github.com/OrenDdp/David-DockIL/issues</forum>
+		<source>https://github.com/OrenDdp/David-DockIL</source>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+		</assets>
+		<summary lang="en_GB">David-DockIL: Dock tabs and grids per category, for Kodi POV IL, Umbrella, Fen Light and Idan Plus</summary>
+		<summary lang="en_NZ">David-DockIL: Dock tabs and grids per category, for Kodi POV IL, Umbrella, Fen Light and Idan Plus</summary>
+		<summary lang="en_US">David-DockIL: Dock tabs and grids per category, for Kodi POV IL, Umbrella, Fen Light and Idan Plus</summary>
+		<description lang="en_GB">A FENtastic based skin (Ivar Brandt) in which every side-menu category is a Dock of tabs with a grid under it. Works in Kodi POV IL (with its logo and look), and in any Kodi 21 with Umbrella, Fen Light or Idan Plus. Rubik font (SIL OFL 1.1), background photo from Pexels.</description>
+		<description lang="en_NZ">A FENtastic based skin (Ivar Brandt) in which every side-menu category is a Dock of tabs with a grid under it. Works in Kodi POV IL (with its logo and look), and in any Kodi 21 with Umbrella, Fen Light or Idan Plus. Rubik font (SIL OFL 1.1), background photo from Pexels.</description>
+		<description lang="en_US">A FENtastic based skin (Ivar Brandt) in which every side-menu category is a Dock of tabs with a grid under it. Works in Kodi POV IL (with its logo and look), and in any Kodi 21 with Umbrella, Fen Light or Idan Plus. Rubik font (SIL OFL 1.1), background photo from Pexels.</description>
+	</extension>
+</addon>
+<addon id="plugin.video.dockil.idanrows" name="David-DockIL - Idan Plus rows" version="0.3.0" provider-name="David">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="plugin.video.idanplus" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.service" library="service.py"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Idan Plus live channels split into main and backup lists, for the Idan Plus tab; keeps Idan Plus seasons in episode order so its next episode goes forward.</summary>
+    <license>GPL-2.0-only</license>
+    <platform>all</platform>
+  </extension>
+</addon>
+<addon id="script.fentastic.helper" name="FENtastic Helper" version="0.6.20a" provider-name="Tikipeter, Ivar Brandt">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.19.1"/>
+    </requires>
+    <extension point="xbmc.python.library" library="resources/lib/default.py"/>
+    <extension point="xbmc.service" library="resources/lib/service.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <news />
+        <platform>all</platform>
+        <license>GPL-2.0-only</license>
+        <forum />
+        <source />
+        <assets>
+            <icon>resources/media/icon.png</icon>
+            <fanart>resources/media/fanart.jpg</fanart>
+        </assets>
+        <description lang="en_GB">FENtastic Helper for the FENtastic Skin.</description>
+        <description lang="en_NZ">FENtastic Helper for the FENtastic Skin.</description>
+        <description lang="en_US">FENtastic Helper for the FENtastic Skin.</description>
+    </extension>
+</addon>
+<addon id="repository.dockil" name="David-DockIL repository" version="1.0.0" provider-name="OrenDdp">
+  <extension point="xbmc.addon.repository" name="David-DockIL repository">
+    <dir>
+      <info compressed="false">https://raw.githubusercontent.com/OrenDdp/David-DockIL/main/docs/repo/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/OrenDdp/David-DockIL/main/docs/repo/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/OrenDdp/David-DockIL/main/docs/repo/zips</datadir>
+    </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">David-DockIL: a Kodi skin with Dock tabs and grids per category.</summary>
+    <platform>all</platform>
+  </extension>
+</addon>
+</addons>
