@@ -27,14 +27,8 @@
 
 מאותו רגע הסקין מתעדכן לבד מהמאגר.
 
-**ב-Kodi POV IL:** כדי שכל ההגדרות של הבילד יעבדו גם בסקין הזה (למשל OK בזמן צפייה שפותח את הנגן), סוגרים את קודי ומעתיקים
-`userdata/addon_data/skin.fentastic/settings.xml` אל `userdata/addon_data/skin.dockil/settings.xml`.
-
-| מערכת | התיקייה `userdata` |
-|---|---|
-| אנדרואיד | `Android/data/<שם החבילה של קודי>/files/.kodi/userdata/` |
-| ווינדוס (לא נבדק) | `%APPDATA%\Kodi\userdata\` |
-| מק (לא נבדק) | `~/Library/Application Support/Kodi/userdata/` |
+**ב-Kodi POV IL:** בהפעלה הראשונה הסקין לוקח לבד את ההגדרות של סקין הבילד (או של David-DockIL, כולל הלשוניות),
+כך שכל ההגדרות של הבילד עובדות גם בו, למשל OK בזמן צפייה שפותח את הנגן.
 
 כדי לחזור לסקין הקודם: **הגדרות > ממשק > סקין**.
 

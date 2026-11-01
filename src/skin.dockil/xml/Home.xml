@@ -4,7 +4,8 @@
 	<onload condition="Skin.HasSetting(POVILChild)">SetFocus(9500)</onload><defaultcontrol>9000</defaultcontrol>
 	<onload condition="System.HasAddon(service.netotv)">SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onload>
 	<backgroundcolor>background</backgroundcolor>
-	<onload condition="!Skin.HasSetting(firsttimerun) + !System.HasAddon(service.netotv)">ActivateWindow(1112)</onload>
+	<onload condition="!Skin.HasSetting(dockil_migrated) + !System.HasAddon(service.netotv)">RunScript(special://skin/scripts/dockil_manager.py,migrate)</onload>
+	<onload condition="!Skin.HasSetting(firsttimerun) + Skin.HasSetting(dockil_migrated) + !System.HasAddon(service.netotv)">ActivateWindow(1112)</onload>
 	<!-- Neto-IL-TV sets everything up itself: no FENtastic setup window -->
 	<onload condition="!Skin.HasSetting(firsttimerun) + System.HasAddon(service.netotv)">Skin.SetBool(firsttimerun)</onload>
   <onload condition="Skin.HasSetting(firsttimerun)">RunScript(script.fentastic.helper,mode=check_for_update&amp;skin_id=skin.dockil)</onload>

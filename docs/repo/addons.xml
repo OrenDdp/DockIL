@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="skin.dockil" version="0.4.1" name="DockIL"
+<addon id="skin.dockil" version="0.4.2" name="DockIL"
 	provider-name="David (based on POV-IL FENtastic by Ivar Brandt)">
 	<requires>
 		<!-- <import addon="xbmc.gui" version="5.17.0" /> -->
