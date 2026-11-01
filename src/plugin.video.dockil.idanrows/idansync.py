@@ -7,7 +7,7 @@
 #   episodes.json  plot, aired date, duration        facts are added, never removed
 # Idan+'s service keeps progress.json in memory and writes it all back after each viewing, which drops what was merged in
 # from the others; the next round puts it back (the folder still has it), so records are never lost, only late by a round.
-# The same file is used by service.netotv (Neto-IL-TV) and plugin.video.dockil.idanrows (David-DockIL).
+# The same file is used by service.netotv (Neto-IL-TV) and plugin.video.dockil.idanrows (DockIL).
 import json
 import os
 import uuid

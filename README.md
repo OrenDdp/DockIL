@@ -1,4 +1,4 @@
-# David-DockIL
+# DockIL
 
 סקין לקודי 21, שבו כל קטגוריה בתפריט הצד היא **Dock של לשוניות**, ומתחתיו גריד של הלשונית הנבחרת.
 מבוסס על [FENtastic](https://github.com/ivarbrandt/skin.fentastic) של Ivar Brandt, בגרסה של Kodi POV IL.
@@ -19,16 +19,16 @@
 ## התקנה מתוך קודי
 
 1. **הגדרות > מערכת > הרחבות**: להפעיל **מקורות לא ידועים**.
-2. **הגדרות > מנהל קבצים > הוסף מקור**: `https://orenddp.github.io/David-DockIL/`, ולתת לו שם, למשל `dockil`.
-3. **הרחבות > התקנה מקובץ ZIP > dockil >** `repository.dockil-1.0.0.zip`.
-4. **הרחבות > התקנה ממאגר > David-DockIL repository > סקינים > David-DockIL > התקן**.
+2. **הגדרות > מנהל קבצים > הוסף מקור**: `https://orenddp.github.io/DockIL/`, ולתת לו שם, למשל `dockil`.
+3. **הרחבות > התקנה מקובץ ZIP > dockil >** `repository.dockil-1.0.1.zip`.
+4. **הרחבות > התקנה ממאגר > DockIL repository > סקינים > DockIL > התקן**.
    קודי מתקין איתו גם את התוסף הנלווה ואת העוזר של FENtastic.
 5. כשקודי שואל אם להחליף לסקין החדש, לענות **כן**.
 
 מאותו רגע הסקין מתעדכן לבד מהמאגר.
 
 **ב-Kodi POV IL:** כדי שכל ההגדרות של הבילד יעבדו גם בסקין הזה (למשל OK בזמן צפייה שפותח את הנגן), סוגרים את קודי ומעתיקים
-`userdata/addon_data/skin.fentastic/settings.xml` אל `userdata/addon_data/skin.david.dockil/settings.xml`.
+`userdata/addon_data/skin.fentastic/settings.xml` אל `userdata/addon_data/skin.dockil/settings.xml`.
 
 | מערכת | התיקייה `userdata` |
 |---|---|
@@ -57,7 +57,7 @@ Move up / Move down / Display type / Rename / Remake / Remove. שורה ריקה
 
 | תיקייה | מה |
 |---|---|
-| `src/skin.david.dockil` | הסקין |
+| `src/skin.dockil` | הסקין |
 | `src/plugin.video.dockil.idanrows` | התוסף הנלווה |
 | `docs/` | מאגר הקודי (GitHub Pages) |
 | `tools/` | `make_docks.py` (הלשוניות), `make_repo.py` (המאגר) |

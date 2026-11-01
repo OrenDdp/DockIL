@@ -31,14 +31,14 @@ PLAYERS = {
 IDAN_ON = "System.HasAddon(plugin.video.idanplus)"
 
 # Display types, named as in FENtastic's widget manager. Includes_DockLayout.xml has a layout for each.
-VIEWS = ("Poster", "BigPoster", "Landscape", "BigLandscape", "LandscapeInfo", "BigLandscapeInfo", "Category")
+VIEWS = ("Poster", "BigPoster", "Landscape", "BigLandscape", "LandscapeInfo", "BigLandscapeInfo", "Category", "Icons")
 # Display types of the recommendations row under a stacked row, and the FENtastic widget each one uses
 STACKED_VIEWS = {"Poster": "WidgetListPosterStacked", "BigPoster": "WidgetListBigPosterStacked",
                  "Landscape": "WidgetListLandscapeStacked", "BigLandscape": "WidgetListBigLandscapeStacked",
                  "LandscapeInfo": "WidgetListEpisodesStacked", "BigLandscapeInfo": "WidgetListBigEpisodesStacked"}
 # Look of all the tiles of a buttons section (one choice for the whole section): Includes_DockLayout.xml has
 # a layout for each
-BUTTON_VIEWS = {"Poster": "DockButtonsPoster", "PosterInfo": "DockButtonsPosterInfo",
+BUTTON_VIEWS = {"Icons": "DockButtonsIcons", "Poster": "DockButtonsPoster", "PosterInfo": "DockButtonsPosterInfo",
                 "Landscape": "DockButtonsLandscape", "LandscapeInfo": "DockButtonsLandscapeInfo"}
 MAX_ITEMS = {"dock": 10, "stacked": 10, "buttons": 20}
 
@@ -79,11 +79,11 @@ SECTIONS = [
             "umb": UMB + "action=tvshows&url=traktwatchlist"}),
         tab("רשתות", {
             "pov": POV + "mode=navigator.networks&menu_type=tvshow",
-            "umb": UMB + "action=tvNetworks"}, "Category"),
+            "umb": UMB + "action=tvNetworks"}, "Icons"),
         tab("ז'אנרים", {
             "pov": POV + "mode=navigator.genres&menu_type=tvshow",
             "fen": FEN + "mode=navigator.genres&menu_type=tvshow",
-            "umb": UMB + "action=tvGenres&url=trakt_tvshow_genre"}, "Category"),
+            "umb": UMB + "action=tvGenres&url=trakt_tvshow_genre"}, "Icons"),
     ]},
     {"id": "movies", "label": "סרטים", "icon": "icons/sidemenu/dockil_movies.png", "kind": "dock", "items": [
         tab("פופולריים", {
@@ -104,7 +104,7 @@ SECTIONS = [
         tab("ז'אנרים", {
             "pov": POV + "mode=navigator.genres&menu_type=movie",
             "fen": FEN + "mode=navigator.genres&menu_type=movie",
-            "umb": UMB + "action=movieGenres&url=trakt_movie_genre"}, "Category"),
+            "umb": UMB + "action=movieGenres&url=trakt_movie_genre"}, "Icons"),
     ]},
     {"id": "idanplus", "label": "עידן פלוס", "icon": "icons/sidemenu/dockil_livetv.png", "kind": "dock", "items": [
         tab("ערוצים חיים", {"idan": ROWS + "row=live"}),
@@ -120,7 +120,7 @@ SECTIONS = [
         tab("סרטים", {"pov": ROWS + "row=byw&menu_type=movie"}, "Landscape"),
     ]},
     # POV-IL's settings shortcuts, with the icons of its favourites. Each shows only when its add-on is installed.
-    {"id": "home", "label": "דף הבית", "icon": "icons/sidemenu/dockil_home.png", "kind": "buttons", "view": "LandscapeInfo", "items": [
+    {"id": "home", "label": "דף הבית", "icon": "icons/sidemenu/dockil_home.png", "kind": "buttons", "view": "Icons", "items": [
         button("POV", POV_ICONS + "Logo_POV_IL.png", 'RunAddon("plugin.video.pov")'),
         button("חיבור שירותים להרחבת POV", POV_ICONS + "Connect_Services.png",
          'RunPlugin("plugin://plugin.video.pov/?mode=myservices")'),
@@ -263,7 +263,7 @@ def stacked_section(sec, base):
 def buttons_section(sec, base):
     o = ["\t\t\t<defaultcontrol always=\"true\">%d</defaultcontrol>" % (base + 50),
          '\t\t\t<control type="panel" id="%d">' % (base + 50),
-         "\t\t\t\t<include>%s</include>" % BUTTON_VIEWS.get(sec.get("view"), BUTTON_VIEWS["LandscapeInfo"]),
+         "\t\t\t\t<include>%s</include>" % BUTTON_VIEWS.get(sec.get("view"), BUTTON_VIEWS["Icons"]),
          "\t\t\t\t<content>"]
     for b in sec["items"]:
         o += ["\t\t\t\t\t<item>",

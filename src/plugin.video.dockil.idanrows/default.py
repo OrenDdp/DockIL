@@ -1,4 +1,4 @@
-# David-DockIL lists made from other add-ons' lists.
+# DockIL lists made from other add-ons' lists.
 #   ?row=live    Idan+'s live channels: the main stream of every channel
 #   ?row=backup  Idan+'s live channels: the backup and hearing-impaired streams
 #   ?row=byw&menu_type=tvshow|movie  POV's "because you watched" titles without POV's "כי צפית..." prefix

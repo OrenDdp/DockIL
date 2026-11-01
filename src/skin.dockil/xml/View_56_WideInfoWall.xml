@@ -27,7 +27,7 @@
 				<left>-4</left>
 				<width>424</width>
 				<height>294</height>
-				<texture colordiffuse="FFFFFFFF">masks/landscapeinfo.png</texture>
+				<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
 				<!-- <bordertexture border="21" infill="false">overlays/shadow.png</bordertexture> -->
 				<bordersize>19</bordersize>
 				<visible>$PARAM[focused]</visible>
@@ -146,7 +146,7 @@
 					<top>-14</top>
           <width>354</width>
           <height>230</height>
-					<texture colordiffuse="FFFFFFFF">masks/landscape.png</texture>
+					<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
 					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -157,7 +157,7 @@
 					<top>-14</top>
           <width>354</width>
           <height>230</height>
-					<texture colordiffuse="FFFFFFFF">masks/landscape.png</texture>
+					<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
 					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -221,7 +221,7 @@
 					<top>-14</top>
           <width>354</width>
           <height>230</height>
-					<texture colordiffuse="FFFFFFFF">masks/landscape.png</texture>
+					<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
 					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -232,7 +232,7 @@
 					<top>-14</top>
           <width>354</width>
           <height>230</height>
-					<texture colordiffuse="FFFFFFFF">masks/landscape.png</texture>
+					<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
 					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -438,7 +438,7 @@
 					<top>-14</top>
           <width>462</width>
           <height>289</height>
-					<texture colordiffuse="FFFFFFFF">masks/landscape.png</texture>
+					<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -449,7 +449,7 @@
 					<top>-14</top>
           <width>462</width>
           <height>289</height>
-					<texture colordiffuse="FFFFFFFF">masks/landscape.png</texture>
+					<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -514,7 +514,7 @@
 					<top>-14</top>
           <width>462</width>
           <height>289</height>
-					<texture colordiffuse="FFFFFFFF">masks/landscape.png</texture>
+					<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(56) | Control.IsVisible(504)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -525,7 +525,7 @@
 					<top>-14</top>
           <width>462</width>
           <height>289</height>
-					<texture colordiffuse="FFFFFFFF">masks/landscape.png</texture>
+					<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>

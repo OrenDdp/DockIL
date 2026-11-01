@@ -1,6 +1,6 @@
-"""Writes skin.david.dockil/xml/Includes_Dock.xml with the default tabs.
+"""Writes skin.dockil/xml/Includes_Dock.xml with the default tabs.
 
-The sections and tabs live in skin.david.dockil/scripts/dockil/docks.py, which the widget manager on the TV
+The sections and tabs live in skin.dockil/scripts/dockil/docks.py, which the widget manager on the TV
 (Skin settings > main menu items > Set widgets) also uses. Edit SECTIONS there, then run:
 
     python -I tools/make_docks.py
@@ -8,7 +8,7 @@ The sections and tabs live in skin.david.dockil/scripts/dockil/docks.py, which t
 import os
 import sys
 
-SKIN = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "skin.david.dockil")
+SKIN = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "skin.dockil")
 sys.path.insert(0, os.path.join(SKIN, "scripts"))
 
 from dockil import docks  # noqa: E402

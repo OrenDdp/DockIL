@@ -4,8 +4,8 @@
 	<onload condition="Skin.HasSetting(POVILChild)">SetFocus(9500)</onload><defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<onload condition="!Skin.HasSetting(firsttimerun)">ActivateWindow(1112)</onload>
-  <onload condition="Skin.HasSetting(firsttimerun)">RunScript(script.fentastic.helper,mode=check_for_update&amp;skin_id=skin.david.dockil)</onload>
-	<onload>RunScript(script.fentastic.helper,mode=check_for_profile_change&amp;skin_id=skin.david.dockil)</onload>
+  <onload condition="Skin.HasSetting(firsttimerun)">RunScript(script.fentastic.helper,mode=check_for_update&amp;skin_id=skin.dockil)</onload>
+	<onload>RunScript(script.fentastic.helper,mode=check_for_profile_change&amp;skin_id=skin.dockil)</onload>
   <onload condition="String.IsEmpty(Window(Home).Property(fentastic.starting_widgets))">RunScript(script.fentastic.helper,mode=starting_widgets)</onload>
   <onload condition="String.IsEmpty(Window(Home).Property(fentastic.starting_widgets))">SetProperty(fentastic.starting_widgets,true)</onload>
 	<onload>RunScript(script.fentastic.helper,mode=modify_keymap)</onload>
@@ -64,7 +64,7 @@
 					</control>
 				</control>
 				
-				<!-- David-DockIL: one section per side-menu item (Includes_Dock.xml, written by tools/make_docks.py) -->
+				<!-- DockIL: one section per side-menu item (Includes_Dock.xml, written by tools/make_docks.py) -->
 				<include>DockSections</include>
 				<control type="group" id="7000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
@@ -781,7 +781,7 @@
 									<top>0</top>
 									<width>395</width>
 									<height>95</height>
-									<texture colordiffuse="button_focus">masks/categorywidget.png</texture>
+									<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
 									<animation effect="fade" start="100" end="0" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasActiveModalDialog">Conditional</animation>
 								</control>
 								
@@ -1059,7 +1059,7 @@
 				<top>30</top>
 				<left>90</left>
 		
-		<!-- David-DockIL: the build's logo in Kodi POV IL, a logo of the user's own (Skin.String(CustomLogo)), or Kodi's -->
+		<!-- DockIL: the build's logo in Kodi POV IL, a logo of the user's own (Skin.String(CustomLogo)), or Kodi's -->
 		<control type="image">
 			<left>-45</left>
 			<top>-70</top>

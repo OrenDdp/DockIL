@@ -1205,7 +1205,7 @@
 							<include>FocusBounce</include>
 							<width>347</width>
 							<height>120</height>
-							<texture colordiffuse="button_focus">masks/categorywidget.png</texture>
+							<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
 							<bordersize>17</bordersize>
 							<include>Animation_FocusTextureFade</include>
 							<visible>Control.HasFocus($PARAM[list_id])</visible>
@@ -1291,7 +1291,7 @@
 						<control type="image">
 							<width>347</width>
 							<height>120</height>
-							<texture colordiffuse="button_focus2">masks/categorywidget-unfocused.png</texture>
+							<texture border="20" colordiffuse="button_focus2">dockil/tile_bg.png</texture>
 							<bordersize>20</bordersize>
 						</control>
 						<control type="image">
@@ -1325,15 +1325,15 @@
 							<include>FocusBounce</include>
 							<width>347</width>
 							<height>120</height>
-							<texture colordiffuse="button_focus">masks/categorywidget.png</texture>
-							<bordersize>17</bordersize>
+							<texture border="24" colordiffuse="FFFFFFFF">dockil/tile_frame.png</texture>
+							<bordersize>15</bordersize>
 							<include>Animation_FocusTextureFade</include>
 							<visible>Control.HasFocus($PARAM[list_id])</visible>
 						</control>
 						<control type="image">
 							<width>347</width>
 							<height>120</height>
-							<texture colordiffuse="button_focus2">masks/categorywidget-unfocused.png</texture>
+							<texture border="20" colordiffuse="button_focus2">dockil/tile_bg.png</texture>
 							<bordersize>20</bordersize>
 						</control>
 						<control type="image">

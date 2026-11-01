@@ -18,7 +18,7 @@ import xbmcvfs
 from dockil import docks
 
 dialog = xbmcgui.Dialog()
-CONFIG = "special://profile/addon_data/skin.david.dockil/dock_tabs.json"
+CONFIG = "special://profile/addon_data/skin.dockil/dock_tabs.json"
 DOCK_XML = "special://skin/xml/Includes_Dock.xml"
 DEFAULT_PATH = "addons://sources/video"
 
@@ -32,7 +32,7 @@ def load_config():
 
 
 def save_config(config):
-    xbmcvfs.mkdirs("special://profile/addon_data/skin.david.dockil/")
+    xbmcvfs.mkdirs("special://profile/addon_data/skin.dockil/")
     with xbmcvfs.File(CONFIG, "w") as f:
         f.write(json.dumps(config, ensure_ascii=False, indent=1))
 
@@ -143,7 +143,7 @@ def widget_options(kind, items, n):
         items[n] = made
     elif action == "Remove":
         if len(items) == 1:
-            dialog.ok("David-DockIL", "A section needs at least one widget")
+            dialog.ok("DockIL", "A section needs at least one widget")
             return False
         del items[n]
     return True
@@ -194,7 +194,7 @@ def apply(config):
 
 def remake_all():
     """Back to the default widgets in every section."""
-    if not dialog.yesno("David-DockIL", "Remake all menus with their default widgets?"):
+    if not dialog.yesno("DockIL", "Remake all menus with their default widgets?"):
         return
     save_config({})
     with xbmcvfs.File(DOCK_XML, "w") as f:

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fonts>
 	<fontset id="Default" idloc="15109">
-		<!-- David-DockIL: Rubik (SIL OFL 1.1, fonts/rubik_license.txt); the skin's original fonts are the "Noto" set below -->
+		<!-- DockIL: Rubik (SIL OFL 1.1, fonts/rubik_license.txt); the skin's original fonts are the "Noto" set below -->
 		<!-- Normal Fonts -->
 		<font>
 			<name>font10</name>

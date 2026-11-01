@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
   <include name="Changelog">
-    <label>[B][COLOR accent_color]Version $INFO[System.AddonVersion(skin.david.dockil)][/COLOR][/B]
+    <label>[B][COLOR accent_color]Version $INFO[System.AddonVersion(skin.dockil)][/COLOR][/B]
 - Quick fix for landscape artwork
 
 [B][COLOR accent_color]Version 1.0.24[/COLOR][/B]

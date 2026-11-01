@@ -1,8 +1,8 @@
 # Builds the GitHub folder (publish/): the Kodi repository under docs/ (served by GitHub Pages) and a copy of our
 # add-ons' sources under src/. Run after any change to the skin or the rows add-on, then commit and push publish/:
 #     python -I tools/make_repo.py
-# Kodi side: add the source https://orenddp.github.io/David-DockIL/ in the file manager, install repository.dockil from
-# that zip, then install the skin "David-DockIL" from it; Kodi pulls in the rows add-on and the FENtastic helper.
+# Kodi side: add the source https://orenddp.github.io/DockIL/ in the file manager, install repository.dockil from
+# that zip, then install the skin "DockIL" from it; Kodi pulls in the rows add-on and the FENtastic helper.
 import hashlib
 import re
 import shutil
@@ -12,20 +12,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'publish'
 DOCS = OUT / 'docs'
-RAW = 'https://raw.githubusercontent.com/OrenDdp/David-DockIL/main/docs/repo'
+RAW = 'https://raw.githubusercontent.com/OrenDdp/DockIL/main/docs/repo'
 # add-on id -> its folder; the FENtastic helper is Ivar Brandt's original (GPL-2.0), shipped so a clean Kodi has it
 ADDONS = {
-    'skin.david.dockil': ROOT / 'skin.david.dockil',
+    'skin.dockil': ROOT / 'skin.dockil',
     'plugin.video.dockil.idanrows': ROOT / 'plugin.video.dockil.idanrows',
     'script.fentastic.helper': ROOT / 'src/script.fentastic.helper-main',
 }
-SOURCES = ('skin.david.dockil', 'plugin.video.dockil.idanrows')   # ours: copied readable into src/
+SOURCES = ('skin.dockil', 'plugin.video.dockil.idanrows')   # ours: copied readable into src/
 SKIP = ('__pycache__/', '.gitignore')
 
-REPO_ID, REPO_VERSION = 'repository.dockil', '1.0.0'
+REPO_ID, REPO_VERSION = 'repository.dockil', '1.0.1'
 REPO_XML = '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="%s" name="David-DockIL repository" version="%s" provider-name="OrenDdp">
-  <extension point="xbmc.addon.repository" name="David-DockIL repository">
+<addon id="%s" name="DockIL repository" version="%s" provider-name="OrenDdp">
+  <extension point="xbmc.addon.repository" name="DockIL repository">
     <dir>
       <info compressed="false">%s/addons.xml</info>
       <checksum>%s/addons.xml.md5</checksum>
@@ -33,7 +33,7 @@ REPO_XML = '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </dir>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">David-DockIL: a Kodi skin with Dock tabs and grids per category.</summary>
+    <summary lang="en_GB">DockIL: a Kodi skin with Dock tabs and grids per category.</summary>
     <platform>all</platform>
   </extension>
 </addon>
@@ -87,7 +87,7 @@ def main():
     (DOCS / 'repo/addons.xml.md5').write_bytes(hashlib.md5(listing.encode('utf-8')).hexdigest().encode('ascii'))
     # GitHub Pages index: Kodi's file manager lists the links on this page as the source's files.
     (DOCS / 'index.html').write_bytes((
-        '<!DOCTYPE html>\n<html><head><meta charset="utf-8"><title>David-DockIL</title></head><body>\n'
+        '<!DOCTYPE html>\n<html><head><meta charset="utf-8"><title>DockIL</title></head><body>\n'
         '<a href="%s-%s.zip">%s-%s.zip</a>\n</body></html>\n' % (REPO_ID, REPO_VERSION, REPO_ID, REPO_VERSION)
     ).encode('utf-8'))
     (DOCS / '.nojekyll').write_bytes(b'')

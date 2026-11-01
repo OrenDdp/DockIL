@@ -30,7 +30,7 @@
 				<pagecontrol>60</pagecontrol>
 				<ondown>610</ondown>
 				<visible>Container(9000).HasFocus(1)</visible>
-				<!-- David-DockIL: sections and tabs of the side menu (Includes_Dock.xml, written by tools/make_docks.py) -->
+				<!-- DockIL: sections and tabs of the side menu (Includes_Dock.xml, written by tools/make_docks.py) -->
 				<include>DockSettings</include>
 			</control>
 
@@ -511,9 +511,9 @@
 				<visible>Container(9000).HasFocus(8)</visible>
 				<control type="button" id="6230">
 					<include>DefaultSettingButton</include>
-					<label>[B]CHANGELOG: $INFO[System.AddonTitle(skin.david.dockil)][/B]</label>
+					<label>[B]CHANGELOG: $INFO[System.AddonTitle(skin.dockil)][/B]</label>
 					<onclick>SetProperty(Changelog,True)</onclick>
-					<onclick>SetProperty(TextViewerHeader,[B]CHANGELOG: $INFO[System.AddonTitle(skin.david.dockil)] v$INFO[System.AddonVersion(skin.david.dockil)][/B],Home)</onclick>
+					<onclick>SetProperty(TextViewerHeader,[B]CHANGELOG: $INFO[System.AddonTitle(skin.dockil)] v$INFO[System.AddonVersion(skin.dockil)][/B],Home)</onclick>
 					<onclick>ActivateWindow(1119)</onclick>
 				</control>
 				<control type="button" id="6231">

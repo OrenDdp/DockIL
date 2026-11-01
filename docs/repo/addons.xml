@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="skin.david.dockil" version="0.3.2" name="David-DockIL"
+<addon id="skin.dockil" version="0.4.0" name="DockIL"
 	provider-name="David (based on POV-IL FENtastic by Ivar Brandt)">
 	<requires>
 		<!-- <import addon="xbmc.gui" version="5.17.0" /> -->
@@ -19,21 +19,21 @@
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
-		<forum>https://github.com/OrenDdp/David-DockIL/issues</forum>
-		<source>https://github.com/OrenDdp/David-DockIL</source>
+		<forum>https://github.com/OrenDdp/DockIL/issues</forum>
+		<source>https://github.com/OrenDdp/DockIL</source>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
 		</assets>
-		<summary lang="en_GB">David-DockIL: Dock tabs and grids per category, for Kodi POV IL, Umbrella, Fen Light and Idan Plus</summary>
-		<summary lang="en_NZ">David-DockIL: Dock tabs and grids per category, for Kodi POV IL, Umbrella, Fen Light and Idan Plus</summary>
-		<summary lang="en_US">David-DockIL: Dock tabs and grids per category, for Kodi POV IL, Umbrella, Fen Light and Idan Plus</summary>
+		<summary lang="en_GB">DockIL: Dock tabs and grids per category, for Kodi POV IL, Umbrella, Fen Light and Idan Plus</summary>
+		<summary lang="en_NZ">DockIL: Dock tabs and grids per category, for Kodi POV IL, Umbrella, Fen Light and Idan Plus</summary>
+		<summary lang="en_US">DockIL: Dock tabs and grids per category, for Kodi POV IL, Umbrella, Fen Light and Idan Plus</summary>
 		<description lang="en_GB">A FENtastic based skin (Ivar Brandt) in which every side-menu category is a Dock of tabs with a grid under it. Works in Kodi POV IL (with its logo and look), and in any Kodi 21 with Umbrella, Fen Light or Idan Plus. Rubik font (SIL OFL 1.1), background photo from Pexels.</description>
 		<description lang="en_NZ">A FENtastic based skin (Ivar Brandt) in which every side-menu category is a Dock of tabs with a grid under it. Works in Kodi POV IL (with its logo and look), and in any Kodi 21 with Umbrella, Fen Light or Idan Plus. Rubik font (SIL OFL 1.1), background photo from Pexels.</description>
 		<description lang="en_US">A FENtastic based skin (Ivar Brandt) in which every side-menu category is a Dock of tabs with a grid under it. Works in Kodi POV IL (with its logo and look), and in any Kodi 21 with Umbrella, Fen Light or Idan Plus. Rubik font (SIL OFL 1.1), background photo from Pexels.</description>
 	</extension>
 </addon>
-<addon id="plugin.video.dockil.idanrows" name="David-DockIL - Idan Plus rows" version="0.3.0" provider-name="David">
+<addon id="plugin.video.dockil.idanrows" name="DockIL - Idan Plus rows" version="0.3.1" provider-name="David">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
     <import addon="plugin.video.idanplus" optional="true"/>
@@ -70,16 +70,16 @@
         <description lang="en_US">FENtastic Helper for the FENtastic Skin.</description>
     </extension>
 </addon>
-<addon id="repository.dockil" name="David-DockIL repository" version="1.0.0" provider-name="OrenDdp">
-  <extension point="xbmc.addon.repository" name="David-DockIL repository">
+<addon id="repository.dockil" name="DockIL repository" version="1.0.1" provider-name="OrenDdp">
+  <extension point="xbmc.addon.repository" name="DockIL repository">
     <dir>
-      <info compressed="false">https://raw.githubusercontent.com/OrenDdp/David-DockIL/main/docs/repo/addons.xml</info>
-      <checksum>https://raw.githubusercontent.com/OrenDdp/David-DockIL/main/docs/repo/addons.xml.md5</checksum>
-      <datadir zip="true">https://raw.githubusercontent.com/OrenDdp/David-DockIL/main/docs/repo/zips</datadir>
+      <info compressed="false">https://raw.githubusercontent.com/OrenDdp/DockIL/main/docs/repo/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/OrenDdp/DockIL/main/docs/repo/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/OrenDdp/DockIL/main/docs/repo/zips</datadir>
     </dir>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">David-DockIL: a Kodi skin with Dock tabs and grids per category.</summary>
+    <summary lang="en_GB">DockIL: a Kodi skin with Dock tabs and grids per category.</summary>
     <platform>all</platform>
   </extension>
 </addon>

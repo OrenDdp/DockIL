@@ -163,7 +163,7 @@
 		<width>120</width>
 		<height>120</height>
 		<textoffsety>27</textoffsety>
-		<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
+		<texturefocus colordiffuse="FFFFFFFF">dockil/circle_frame.png</texturefocus>
 		<texturenofocus />
 		<align>center</align>
 		<aligny>top</aligny>
@@ -201,7 +201,7 @@
 				<onclick>$PARAM[onclick_2]</onclick>
 				<font></font>
 				<label>$PARAM[label]</label>
-				<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
+				<texturefocus colordiffuse="FFFFFFFF">dockil/circle_frame.png</texturefocus>
 				<texturenofocus />
 				<radioposx>40</radioposx>
 				<radioposy>0</radioposy>
@@ -226,7 +226,7 @@
 				<onclick>$PARAM[onclick]</onclick>
 				<font></font>
 				<label>$PARAM[label]</label>
-				<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
+				<texturefocus colordiffuse="FFFFFFFF">dockil/circle_frame.png</texturefocus>
 				<texturenofocus />
 				<radioposx>40</radioposx>
 				<radioposy>0</radioposy>

@@ -1798,7 +1798,7 @@
 			<width>$PARAM[width]</width>
 			<height>1</height>
 			<texturebg></texturebg>
-			<midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
+			<midtexture colordiffuse="FFFFFFFF" border="3">progress/texturebg_alt_white.png</midtexture>
 			<info>Container($PARAM[id]).ListItem.Property(WatchedProgress)</info>
 			<visible>[String.IsEqual(ListItem.DBtype,movie) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)] | [Integer.IsGreater(Container($PARAM[id]).ListItem.Property(UnwatchedEpisodes),0) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)] | [String.IsEqual(ListItem.DBtype,episode) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)]</visible>
 			<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
