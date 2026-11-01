@@ -4,6 +4,7 @@
 	<expression name="dockil_pov">System.HasAddon(plugin.video.pov)</expression>
 	<expression name="dockil_fen">System.HasAddon(plugin.video.fen) + !System.HasAddon(plugin.video.pov)</expression>
 	<expression name="dockil_umb">System.HasAddon(plugin.video.umbrella) + !System.HasAddon(plugin.video.pov) + !System.HasAddon(plugin.video.fen)</expression>
+	<expression name="dockil_neto">System.HasAddon(service.netotv)</expression>
 	<include name="DockMainMenu">
 		<item>
 			<label>סדרות</label>
@@ -11,7 +12,7 @@
 			<property name="menu_id">$NUMBER[30040]</property>
 			<property name="id">dock_tvshows</property>
 			<thumb>icons/sidemenu/dockil_tvshows.png</thumb>
-			<visible>[[$EXP[dockil_pov]] | [$EXP[dockil_fen]] | [$EXP[dockil_umb]]] + !Skin.HasSetting(dock.hide.tvshows)</visible>
+			<visible>[[$EXP[dockil_pov]] | [$EXP[dockil_fen]] | [$EXP[dockil_umb]]] + !Skin.HasSetting(dock.hide.tvshows) + !$EXP[dockil_neto]</visible>
 		</item>
 		<item>
 			<label>סרטים</label>
@@ -19,7 +20,7 @@
 			<property name="menu_id">$NUMBER[30140]</property>
 			<property name="id">dock_movies</property>
 			<thumb>icons/sidemenu/dockil_movies.png</thumb>
-			<visible>[[$EXP[dockil_pov]] | [$EXP[dockil_fen]] | [$EXP[dockil_umb]]] + !Skin.HasSetting(dock.hide.movies)</visible>
+			<visible>[[$EXP[dockil_pov]] | [$EXP[dockil_fen]] | [$EXP[dockil_umb]]] + !Skin.HasSetting(dock.hide.movies) + !$EXP[dockil_neto]</visible>
 		</item>
 		<item>
 			<label>עידן פלוס</label>
@@ -27,7 +28,7 @@
 			<property name="menu_id">$NUMBER[30240]</property>
 			<property name="id">dock_idanplus</property>
 			<thumb>icons/sidemenu/dockil_livetv.png</thumb>
-			<visible>[[System.HasAddon(plugin.video.idanplus)]] + !Skin.HasSetting(dock.hide.idanplus)</visible>
+			<visible>[[System.HasAddon(plugin.video.idanplus) + $EXP[dockil_neto]] | [System.HasAddon(plugin.video.idanplus) + !$EXP[dockil_neto]] | [System.HasAddon(plugin.video.idanplus)]] + !Skin.HasSetting(dock.hide.idanplus)</visible>
 		</item>
 		<item>
 			<label>בגלל שראית</label>
@@ -35,7 +36,7 @@
 			<property name="menu_id">$NUMBER[30301]</property>
 			<property name="id">dock_byw</property>
 			<thumb>icons/sidemenu/videos.png</thumb>
-			<visible>[[$EXP[dockil_pov]]] + !Skin.HasSetting(dock.hide.byw)</visible>
+			<visible>[[$EXP[dockil_pov]]] + !Skin.HasSetting(dock.hide.byw) + !$EXP[dockil_neto]</visible>
 		</item>
 		<item>
 			<label>דף הבית</label>
@@ -43,7 +44,7 @@
 			<property name="menu_id">$NUMBER[30450]</property>
 			<property name="id">dock_home</property>
 			<thumb>icons/sidemenu/dockil_home.png</thumb>
-			<visible>[[System.HasAddon(plugin.video.pov)] | [System.HasAddon(service.subtitles.kodipovilai)] | [System.HasAddon(plugin.program.kodipovilwizard)] | [System.HasAddon(plugin.program.orderfavourites-hebrew)]] + !Skin.HasSetting(dock.hide.home)</visible>
+			<visible>[[System.HasAddon(plugin.video.pov)] | [System.HasAddon(service.subtitles.kodipovilai)] | [System.HasAddon(plugin.program.kodipovilwizard)] | [System.HasAddon(plugin.program.orderfavourites-hebrew)]] + !Skin.HasSetting(dock.hide.home) + !$EXP[dockil_neto]</visible>
 		</item>
 	</include>
 	<include name="DockSettings">
@@ -204,35 +205,35 @@
 					<item>
 						<label>רשתות</label>
 						<property name="path">plugin://plugin.video.pov/?mode=navigator.networks&amp;menu_type=tvshow</property>
-						<property name="view">Category</property>
+						<property name="view">Icons</property>
 						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.pov/?mode=navigator.networks&amp;menu_type=tvshow&quot;,return)</onclick>
 						<visible>$EXP[dockil_pov]</visible>
 					</item>
 					<item>
 						<label>רשתות</label>
 						<property name="path">plugin://plugin.video.umbrella/?action=tvNetworks</property>
-						<property name="view">Category</property>
+						<property name="view">Icons</property>
 						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.umbrella/?action=tvNetworks&quot;,return)</onclick>
 						<visible>$EXP[dockil_umb]</visible>
 					</item>
 					<item>
 						<label>ז'אנרים</label>
 						<property name="path">plugin://plugin.video.pov/?mode=navigator.genres&amp;menu_type=tvshow</property>
-						<property name="view">Category</property>
+						<property name="view">Icons</property>
 						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.pov/?mode=navigator.genres&amp;menu_type=tvshow&quot;,return)</onclick>
 						<visible>$EXP[dockil_pov]</visible>
 					</item>
 					<item>
 						<label>ז'אנרים</label>
 						<property name="path">plugin://plugin.video.fen/?mode=navigator.genres&amp;menu_type=tvshow</property>
-						<property name="view">Category</property>
+						<property name="view">Icons</property>
 						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.fen/?mode=navigator.genres&amp;menu_type=tvshow&quot;,return)</onclick>
 						<visible>$EXP[dockil_fen]</visible>
 					</item>
 					<item>
 						<label>ז'אנרים</label>
 						<property name="path">plugin://plugin.video.umbrella/?action=tvGenres&amp;url=trakt_tvshow_genre</property>
-						<property name="view">Category</property>
+						<property name="view">Icons</property>
 						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.umbrella/?action=tvGenres&amp;url=trakt_tvshow_genre&quot;,return)</onclick>
 						<visible>$EXP[dockil_umb]</visible>
 					</item>
@@ -333,21 +334,21 @@
 					<item>
 						<label>ז'אנרים</label>
 						<property name="path">plugin://plugin.video.pov/?mode=navigator.genres&amp;menu_type=movie</property>
-						<property name="view">Category</property>
+						<property name="view">Icons</property>
 						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.pov/?mode=navigator.genres&amp;menu_type=movie&quot;,return)</onclick>
 						<visible>$EXP[dockil_pov]</visible>
 					</item>
 					<item>
 						<label>ז'אנרים</label>
 						<property name="path">plugin://plugin.video.fen/?mode=navigator.genres&amp;menu_type=movie</property>
-						<property name="view">Category</property>
+						<property name="view">Icons</property>
 						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.fen/?mode=navigator.genres&amp;menu_type=movie&quot;,return)</onclick>
 						<visible>$EXP[dockil_fen]</visible>
 					</item>
 					<item>
 						<label>ז'אנרים</label>
 						<property name="path">plugin://plugin.video.umbrella/?action=movieGenres&amp;url=trakt_movie_genre</property>
-						<property name="view">Category</property>
+						<property name="view">Icons</property>
 						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.umbrella/?action=movieGenres&amp;url=trakt_movie_genre&quot;,return)</onclick>
 						<visible>$EXP[dockil_umb]</visible>
 					</item>
@@ -370,10 +371,17 @@
 				<content>
 					<item>
 						<label>ערוצים חיים</label>
+						<property name="path">plugin://plugin.video.netotv/?row=live</property>
+						<property name="view">BigLandscape</property>
+						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.netotv/?row=live&quot;,return)</onclick>
+						<visible>System.HasAddon(plugin.video.idanplus) + $EXP[dockil_neto]</visible>
+					</item>
+					<item>
+						<label>ערוצים חיים</label>
 						<property name="path">plugin://plugin.video.dockil.idanrows/?row=live</property>
 						<property name="view">BigLandscape</property>
 						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.dockil.idanrows/?row=live&quot;,return)</onclick>
-						<visible>System.HasAddon(plugin.video.idanplus)</visible>
+						<visible>System.HasAddon(plugin.video.idanplus) + !$EXP[dockil_neto]</visible>
 					</item>
 					<item>
 						<label>המשך צפייה</label>
@@ -398,10 +406,17 @@
 					</item>
 					<item>
 						<label>ערוצי גיבוי</label>
+						<property name="path">plugin://plugin.video.netotv/?row=backup</property>
+						<property name="view">BigLandscape</property>
+						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.netotv/?row=backup&quot;,return)</onclick>
+						<visible>System.HasAddon(plugin.video.idanplus) + $EXP[dockil_neto]</visible>
+					</item>
+					<item>
+						<label>ערוצי גיבוי</label>
 						<property name="path">plugin://plugin.video.dockil.idanrows/?row=backup</property>
 						<property name="view">BigLandscape</property>
 						<onclick>ActivateWindow(Videos,&quot;plugin://plugin.video.dockil.idanrows/?row=backup&quot;,return)</onclick>
-						<visible>System.HasAddon(plugin.video.idanplus)</visible>
+						<visible>System.HasAddon(plugin.video.idanplus) + !$EXP[dockil_neto]</visible>
 					</item>
 				</content>
 			</control>
@@ -451,7 +466,7 @@
 			<include content="Visible_Right_Delayed"><param name="id" value="dock_home"/></include>
 			<defaultcontrol always="true">30450</defaultcontrol>
 			<control type="panel" id="30450">
-				<include>DockButtonsLandscapeInfo</include>
+				<include>DockButtonsIcons</include>
 				<content>
 					<item>
 						<label>POV</label>

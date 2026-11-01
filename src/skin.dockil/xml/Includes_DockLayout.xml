@@ -9,7 +9,8 @@
 		<height>80</height>
 		<orientation>horizontal</orientation>
 		<scrolltime tween="cubic" easing="out">300</scrolltime>
-		<onleft>9000</onleft>
+		<onleft condition="!$EXP[dockil_neto]">9000</onleft>
+		<onleft condition="$EXP[dockil_neto]">700</onleft>
 		<ondown condition="Control.IsVisible($PARAM[grid_id]1)">$PARAM[grid_id]1</ondown>
 		<ondown condition="Control.IsVisible($PARAM[grid_id]2)">$PARAM[grid_id]2</ondown>
 		<ondown condition="Control.IsVisible($PARAM[grid_id]3)">$PARAM[grid_id]3</ondown>
@@ -18,7 +19,8 @@
 		<ondown condition="Control.IsVisible($PARAM[grid_id]6)">$PARAM[grid_id]6</ondown>
 		<ondown condition="Control.IsVisible($PARAM[grid_id]7)">$PARAM[grid_id]7</ondown>
 		<ondown condition="Control.IsVisible($PARAM[grid_id]8)">$PARAM[grid_id]8</ondown>
-		<onback>9000</onback>
+		<onback condition="!$EXP[dockil_neto]">9000</onback>
+		<onback condition="$EXP[dockil_neto]">Minimize</onback>
 		<itemlayout width="230" height="80">
 			<control type="label">
 				<width>215</width>
@@ -342,19 +344,35 @@
 		</control>
 	</include>
 	<include name="DockPanelCommon">
-		<left>0</left>
-		<top>200</top>
-		<width>1440</width>
-		<height>860</height>
+		<!-- Neto-IL-TV has no side menu, so its grid takes the whole width -->
+		<include content="DockPanelBox" condition="!System.HasAddon(service.netotv)">
+			<param name="left" value="0"/>
+			<param name="top" value="200"/>
+			<param name="width" value="1440"/>
+			<param name="height" value="860"/>
+		</include>
+		<include content="DockPanelBox" condition="System.HasAddon(service.netotv)">
+			<param name="left" value="-417"/>
+			<param name="top" value="230"/>
+			<param name="width" value="1850"/>
+			<param name="height" value="830"/>
+		</include>
 		<orientation>vertical</orientation>
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<onup>$PARAM[dock_id]</onup>
-		<onleft>9000</onleft>
+		<onleft condition="!$EXP[dockil_neto]">9000</onleft>
+		<onleft condition="$EXP[dockil_neto]">noop</onleft>
 		<onback>SetFocus($PARAM[id],0,absolute)</onback>
 		<onback>$PARAM[dock_id]</onback>
 		<!-- see-through while the Dock moves and the new tab loads (not hidden: Kodi does not load a hidden list) -->
 		<animation effect="fade" start="100" end="0" time="0" reversible="false" condition="Container($PARAM[id]).IsUpdating | Container($PARAM[dock_id]).Scrolling">Conditional</animation>
 		<content target="videos">$INFO[Container($PARAM[dock_id]).ListItem.Property(path)]</content>
+	</include>
+	<include name="DockPanelBox">
+		<left>$PARAM[left]</left>
+		<top>$PARAM[top]</top>
+		<width>$PARAM[width]</width>
+		<height>$PARAM[height]</height>
 	</include>
 	<!-- Name and details under the picture, for the *Info display types -->
 	<include name="DockInfoLines">

@@ -29,6 +29,9 @@ PLAYERS = {
 
 # Idan+ tabs do not depend on the player, only on Idan+ being installed.
 IDAN_ON = "System.HasAddon(plugin.video.idanplus)"
+# In Neto-IL-TV (its service is installed) the home page is only the Idan+ Dock: no side menu, a full-width grid,
+# and its own rows add-on for the live and backup channels.
+NETO = "$EXP[dockil_neto]"
 
 # Display types, named as in FENtastic's widget manager. Includes_DockLayout.xml has a layout for each.
 VIEWS = ("Poster", "BigPoster", "Landscape", "BigLandscape", "LandscapeInfo", "BigLandscapeInfo", "Category", "Icons")
@@ -107,11 +110,11 @@ SECTIONS = [
             "umb": UMB + "action=movieGenres&url=trakt_movie_genre"}, "Icons"),
     ]},
     {"id": "idanplus", "label": "עידן פלוס", "icon": "icons/sidemenu/dockil_livetv.png", "kind": "dock", "items": [
-        tab("ערוצים חיים", {"idan": ROWS + "row=live"}),
+        tab("ערוצים חיים", {"idan": ROWS + "row=live", "neto": "plugin://plugin.video.netotv/?row=live"}),
         tab("המשך צפייה", {"idan": idan("name=%5BB%5D%D7%94%D7%9E%D7%A9%D7%9A+%D7%A6%D7%A4%D7%99%D7%99%D7%94%5B%2FB%5D&url=&mode=27")}),
         tab("מועדפים", {"idan": idan("name=%5BB%5D%D7%9E%D7%95%D7%A2%D7%93%D7%A4%D7%99+%D7%A2%D7%99%D7%93%D7%9F+%D7%A4%D7%9C%D7%95%D7%A1%5B%2FB%5D&url=&mode=10")}),
         tab("VOD", {"idan": idan("name=%5BB%5DVOD%5B%2FB%5D&url=&mode=2")}),
-        tab("ערוצי גיבוי", {"idan": ROWS + "row=backup"}),
+        tab("ערוצי גיבוי", {"idan": ROWS + "row=backup", "neto": "plugin://plugin.video.netotv/?row=backup"}),
     ]},
     # Like POV-IL's "כי צפית": a row of watched titles, and under it the recommendations for the focused one.
     # The titles come through our rows add-on, which drops POV's "כי צפית..." prefix.
@@ -168,6 +171,8 @@ def path_entries(paths):
     """[(condition, path)] for a tab's paths."""
     if "any" in paths:
         return [("true", paths["any"])]
+    if "neto" in paths:
+        return [(IDAN_ON + " + " + NETO, paths["neto"]), (IDAN_ON + " + !" + NETO, paths["idan"])]
     if "idan" in paths:
         return [(IDAN_ON, paths["idan"])]
     return [("$EXP[dockil_%s]" % p, path) for p, path in paths.items()]
@@ -310,6 +315,7 @@ def build(config=None):
          "<includes>"]
     for p in PLAYERS:
         o.append('\t<expression name="dockil_%s">%s</expression>' % (p, escape(player_cond(p))))
+    o.append('\t<expression name="dockil_neto">System.HasAddon(service.netotv)</expression>')
 
     # side menu
     o.append('\t<include name="DockMainMenu">')
@@ -321,8 +327,9 @@ def build(config=None):
               "\t\t\t<property name=\"menu_id\">$NUMBER[%d]</property>" % focus_id(sec, base),
               "\t\t\t<property name=\"id\">dock_%s</property>" % sec["id"],
               "\t\t\t<thumb>%s</thumb>" % sec["icon"],
-              "\t\t\t<visible>%s</visible>" % escape("[%s] + %s" % (
-                  " | ".join("[%s]" % c for c in section_conds(sec)), shown(sec["id"]))),
+              "\t\t\t<visible>%s</visible>" % escape("[%s] + %s%s" % (
+                  " | ".join("[%s]" % c for c in section_conds(sec)), shown(sec["id"]),
+                  "" if sec["id"] == "idanplus" else " + !" + NETO)),
               "\t\t</item>"]
     o.append("\t</include>")
 
