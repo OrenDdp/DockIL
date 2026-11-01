@@ -172,7 +172,7 @@
 				<left>-4</left>
 				<width>355</width>
 				<height>291</height>
-				<texture colordiffuse="button_focus">masks/landscapeinfo.png</texture>
+				<texture colordiffuse="FFFFFFFF">masks/landscapeinfo.png</texture>
 				<bordersize>19</bordersize>
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -445,7 +445,7 @@
 				<left>-4</left>
 				<width>461</width>
 				<height>352</height>
-				<texture colordiffuse="button_focus">masks/landscapeinfo.png</texture>
+				<texture colordiffuse="FFFFFFFF">masks/landscapeinfo.png</texture>
 				<bordersize>17</bordersize>
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -951,7 +951,7 @@
 					<top>-14</top>
 					<width>283</width>
 					<height>387</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="FFFFFFFF">masks/poster.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -962,7 +962,7 @@
 					<top>-14</top>
 					<width>283</width>
 					<height>387</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="FFFFFFFF">masks/poster.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(54) | Control.IsVisible(500)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -1027,7 +1027,7 @@
 					<top>-14</top>
 					<width>283</width>
 					<height>387</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="FFFFFFFF">masks/poster.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
@@ -1038,7 +1038,7 @@
 					<top>-14</top>
 					<width>283</width>
 					<height>387</height>
-					<texture colordiffuse="button_focus">masks/poster.png</texture>
+					<texture colordiffuse="FFFFFFFF">masks/poster.png</texture>
 					<bordersize>17</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(54) | Control.IsVisible(500)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>

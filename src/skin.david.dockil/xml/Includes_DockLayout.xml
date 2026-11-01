@@ -51,7 +51,7 @@
 		<control type="panel" id="$PARAM[id]">
 			<left>0</left>
 			<top>200</top>
-			<width>1380</width>
+			<width>1440</width>
 			<height>860</height>
 			<orientation>vertical</orientation>
 			<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -303,7 +303,7 @@
 	<include name="DockButtonsPoster">
 		<left>0</left>
 		<top>90</top>
-		<width>1380</width>
+		<width>1440</width>
 		<height>970</height>
 		<orientation>vertical</orientation>
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -347,7 +347,7 @@
 	<include name="DockButtonsPosterInfo">
 		<left>0</left>
 		<top>90</top>
-		<width>1380</width>
+		<width>1440</width>
 		<height>970</height>
 		<orientation>vertical</orientation>
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -413,7 +413,7 @@
 	<include name="DockButtonsLandscape">
 		<left>0</left>
 		<top>90</top>
-		<width>1380</width>
+		<width>1440</width>
 		<height>970</height>
 		<orientation>vertical</orientation>
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -457,7 +457,7 @@
 	<include name="DockButtonsLandscapeInfo">
 		<left>0</left>
 		<top>90</top>
-		<width>1380</width>
+		<width>1440</width>
 		<height>970</height>
 		<orientation>vertical</orientation>
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
