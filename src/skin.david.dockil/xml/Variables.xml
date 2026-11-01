@@ -1282,8 +1282,7 @@
 		<value condition="!String.IsEmpty(Skin.String(CustomBackground))">$INFO[Skin.String(CustomBackground)]</value>
 		<!-- KODI-RD-IL CHANGES -->
 		<!-- <value>special://skin/extras/backgrounds/redblur.jpg</value> -->
-		<!-- David-DockIL: Kodi POV IL keeps its lightning; everywhere else our own background -->
-		<value condition="System.HasAddon(plugin.program.kodipovilwizard)">special://skin/media/kodirdil/skin_backgrounds/lightning_bg1.jpg</value>
+		<!-- David-DockIL: our own background everywhere (POV IL's lightning can still be picked as a custom background) -->
 		<value>special://skin/media/dockil/background.jpg</value>
 	</variable>
 
