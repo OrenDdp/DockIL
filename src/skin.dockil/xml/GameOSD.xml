@@ -139,6 +139,7 @@
 						</itemlayout>
 						<focusedlayout condition="!Control.IsVisible(2200)" width="700" height="80">
 							<control type="image">
+								<include>NetoFocus_1</include>
 								<texture colordiffuse="button_focus">masks/focus.png</texture>
 								<visible>Control.HasFocus(1103)</visible>
 							</control>
@@ -171,6 +172,7 @@
 						</focusedlayout>
 						<focusedlayout condition="Control.IsVisible(2200)" width="688" height="80">
 							<control type="image">
+								<include>NetoFocus_1</include>
 								<texture colordiffuse="button_focus">masks/focus.png</texture>
 								<visible>Control.HasFocus(1103)</visible>
 							</control>

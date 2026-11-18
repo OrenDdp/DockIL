@@ -575,6 +575,7 @@
 						<left>25</left>
 						<width>445</width>
 						<height>85</height>
+						<include>NetoFocus_1</include>
 						<texture colordiffuse="button_focus">masks/focus.png</texture>
 						<animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
 					</control>

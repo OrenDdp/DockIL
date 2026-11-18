@@ -10,8 +10,10 @@
 		<textcolor>unfocused_text</textcolor>
 		<focusedcolor>focused_text</focusedcolor>
 		<invalidcolor>invalid</invalidcolor>
+		<include>NetoFocus_12</include>
 		<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
 		<texturenofocus />
+		<include>NetoFocus_20</include>
 		<alttexturefocus colordiffuse="button_focus">masks/focus.png</alttexturefocus>
 		<alttexturenofocus></alttexturenofocus>
 	</include>
@@ -24,6 +26,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font></font>
+				<include>NetoFocus_2</include>
 				<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
 				<texturenofocus />
 				<radioposx>26</radioposx>

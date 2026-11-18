@@ -79,6 +79,7 @@
 						<onleft>4000</onleft>
 						<onright>4000</onright>
 						<ondown>5000</ondown>
+						<include>NetoFocus_8</include>
 						<texturefocus colordiffuse="button_focus" border="21">masks/landscape.png</texturefocus>
 						<texturenofocus colordiffuse="button_focus2" border="21">masks/landscape-unfocused.png</texturenofocus>
 						<visible>Integer.IsGreater(Container(4000).NumItems,0)</visible>
@@ -352,6 +353,7 @@
 								<width>196</width>
 								<height>287</height>
 								<include>FocusBounce</include>
+								<include>NetoFocus_19</include>
 								<texture colordiffuse="button_focus">masks/poster.png</texture>
 							</control>
 							<control type="image">
@@ -484,6 +486,7 @@
 								<top>16</top>
 								<width>190</width>
 								<height>285</height>
+								<include>NetoFocus_16</include>
 								<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 							</control>
 						</control>

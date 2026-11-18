@@ -35,6 +35,7 @@
 		<left>5</left>
 		<right>5</right>
 		<top>5</top>
+		<include>NetoFocus_25</include>
 		<texture colordiffuse="button_focus">masks/categorywidget.png</texture>
 	</control>
 	<control type="image">
@@ -444,6 +445,7 @@
 		<left>5</left>
 		<right>5</right>
 		<top>5</top>
+		<include>NetoFocus_25</include>
 		<texture colordiffuse="button_focus">masks/categorywidget.png</texture>
 	</control>
 	<control type="label">

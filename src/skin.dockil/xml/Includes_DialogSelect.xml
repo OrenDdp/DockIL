@@ -97,6 +97,7 @@
 						<top>0</top>
 						<right>25</right>
 						<bottom>0</bottom>
+						<include>NetoFocus_1</include>
 						<texture colordiffuse="button_focus">masks/focus.png</texture>
 						<visible>Control.HasFocus(6)</visible>
 					</control>
@@ -262,6 +263,7 @@
 						</itemlayout>
 						<focusedlayout width="408" height="374">
 							<control type="image">
+								<include>NetoFocus_1</include>
 								<texture colordiffuse="button_focus">masks/focus.png</texture>
 								<visible>Control.HasFocus(3)</visible>
 							</control>
@@ -478,6 +480,7 @@
 						<control type="image">
 							<width>444</width>
 							<height>250</height>
+							<include>NetoFocus_16</include>
 							<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 							<visible>Control.HasFocus(10811)</visible>
 						</control>
@@ -584,6 +587,7 @@
 						<control type="image">
 							<width>444</width>
 							<height>250</height>
+							<include>NetoFocus_16</include>
 							<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 							<visible>Control.HasFocus(10811)</visible>
 						</control>
@@ -691,6 +695,7 @@
 						<control type="image">
 							<width>444</width>
 							<height>250</height>
+							<include>NetoFocus_16</include>
 							<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 						</control>
 					</control>

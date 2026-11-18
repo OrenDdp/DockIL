@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by tools/make_neto_focus.py: the white focus frames of Neto-IL-TV. -->
+<includes>
+	<include name="NetoFocus_1">
+		<texture border="16" colordiffuse="FFFFFFFF">dockil/frame/masks/focus.png</texture>
+	</include>
+	<include name="NetoFocus_2">
+		<texturefocus colordiffuse="FFFFFFFF">dockil/frame/buttons/roundbutton-fo.png</texturefocus>
+	</include>
+	<include name="NetoFocus_3">
+		<texturefocus border="30" colordiffuse="FFFFFFFF">dockil/frame/buttons/dialogbutton-fo.png</texturefocus>
+	</include>
+	<include name="NetoFocus_4">
+		<texturefocus border="40" colordiffuse="FFFFFFFF">dockil/frame/buttons/dialogbutton-fo.png</texturefocus>
+	</include>
+	<include name="NetoFocus_5">
+		<texturefocus border="26" colordiffuse="FFFFFFFF">dockil/frame/buttons/button-fo.png</texturefocus>
+	</include>
+	<include name="NetoFocus_6">
+		<alttexturefocus border="26" colordiffuse="FFFFFFFF">dockil/frame/buttons/button-fo.png</alttexturefocus>
+	</include>
+	<include name="NetoFocus_7">
+		<texturefocus border="40" colordiffuse="FFFFFFFF">dockil/frame/buttons/button-fo.png</texturefocus>
+	</include>
+	<include name="NetoFocus_8">
+		<texturefocus colordiffuse="FFFFFFFF" border="21">dockil/frame/masks/landscape.png</texturefocus>
+	</include>
+	<include name="NetoFocus_9">
+		<texture border="8" colordiffuse="FFFFFFFF">dockil/frame/masks/landscape.png</texture>
+	</include>
+	<include name="NetoFocus_10">
+		<texturefocus border="6" colordiffuse="FFFFFFFF">dockil/frame/masks/landscape.png</texturefocus>
+	</include>
+	<include name="NetoFocus_11">
+		<texturefocus border="16" colordiffuse="FFFFFFFF">dockil/frame/masks/categorywidget.png</texturefocus>
+	</include>
+	<include name="NetoFocus_12">
+		<texturefocus border="16" colordiffuse="FFFFFFFF">dockil/frame/masks/focus.png</texturefocus>
+	</include>
+	<include name="NetoFocus_13">
+		<texturefocus border="16" colordiffuse="FFFFFFFF">dockil/frame/buttons/dfo.png</texturefocus>
+	</include>
+	<include name="NetoFocus_14">
+		<texture border="16" colordiffuse="FFFFFFFF">dockil/frame/masks/focus-long.png</texture>
+	</include>
+	<include name="NetoFocus_15">
+		<texture border="26" colordiffuse="FFFFFFFF">dockil/frame/buttons/button-fo.png</texture>
+	</include>
+	<include name="NetoFocus_16">
+		<texture border="8" colordiffuse="FFFFFFFF">buttons/thumbnail_focused.png</texture>
+	</include>
+	<include name="NetoFocus_17">
+		<texturefocus border="20" colordiffuse="FFFFFFFF">dockil/frame/buttons/dfo.png</texturefocus>
+	</include>
+	<include name="NetoFocus_18">
+		<texturefocus border="40" colordiffuse="FFFFFFFF">dockil/frame/buttons/dfo.png</texturefocus>
+	</include>
+	<include name="NetoFocus_19">
+		<texture border="16" colordiffuse="FFFFFFFF">dockil/frame/masks/poster.png</texture>
+	</include>
+	<include name="NetoFocus_20">
+		<alttexturefocus border="16" colordiffuse="FFFFFFFF">dockil/frame/masks/focus.png</alttexturefocus>
+	</include>
+	<include name="NetoFocus_21">
+		<texture border="16" colordiffuse="FFFFFFFF">dockil/frame/masks/settingspanel.png</texture>
+	</include>
+	<include name="NetoFocus_22">
+		<texturefocus colordiffuse="FFFFFFFF">dockil/frame/osd/fullscreen/buttons/button-fo.png</texturefocus>
+	</include>
+	<include name="NetoFocus_23">
+		<texturefocus border="16" colordiffuse="FFFFFFFF">dockil/frame/masks/focus-long.png</texturefocus>
+	</include>
+	<include name="NetoFocus_24">
+		<alttexturefocus border="40" colordiffuse="FFFFFFFF">dockil/frame/buttons/dialogbutton-fo.png</alttexturefocus>
+	</include>
+	<include name="NetoFocus_25">
+		<texture border="16" colordiffuse="FFFFFFFF">dockil/frame/masks/categorywidget.png</texture>
+	</include>
+	<include name="NetoFocus_26">
+		<texturefocus border="40" colordiffuse="FFFFFFFF">dockil/frame/masks/settingspanel.png</texturefocus>
+	</include>
+	<include name="NetoFocus_27">
+		<texture border="6" colordiffuse="FFFFFFFF">dockil/frame/masks/landscape.png</texture>
+	</include>
+	<include name="NetoFocus_28">
+		<texture border="8" colordiffuse="FFFFFFFF">dockil/frame/masks/banner.png</texture>
+	</include>
+	<include name="NetoFocus_29">
+		<texture border="16" colordiffuse="FFFFFFFF">dockil/frame/masks/landscape.png</texture>
+	</include>
+</includes>

@@ -60,6 +60,7 @@
 							<include>FocusBounce</include>
 							<width>396</width>
 							<height>245</height>
+							<include>NetoFocus_29</include>
 							<texture colordiffuse="button_focus">masks/landscape.png</texture>
 							<bordersize>15</bordersize>
 							<include>Animation_FocusTextureFade</include>

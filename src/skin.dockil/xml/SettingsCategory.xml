@@ -110,6 +110,7 @@
 				<textoffsetx>40</textoffsetx>
 				<aligny>center</aligny>
 				<font>font37</font>
+				<include>NetoFocus_12</include>
 				<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
 				<texturenofocus />
 			</control>
@@ -152,6 +153,7 @@
 				<onclick>SettingsLevelChange</onclick>
 				<textoffsetx>100</textoffsetx>
 				<textoffsety>0</textoffsety>
+				<include>NetoFocus_12</include>
 				<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
 				<texturenofocus />
 				<radioposx>40</radioposx>

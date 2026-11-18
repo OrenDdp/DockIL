@@ -56,6 +56,7 @@
 					<bottom>0</bottom>
 					<right>25</right>
 					<visible>Control.HasFocus(10)</visible>
+					<include>NetoFocus_14</include>
 					<texture colordiffuse="button_focus">masks/focus-long.png</texture>
 				</control>
 				<control type="label">

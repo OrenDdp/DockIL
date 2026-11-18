@@ -92,6 +92,7 @@
 						<right>0</right>
 						<height>71</height>
 						<visible>Control.HasFocus(450)</visible>
+						<include>NetoFocus_14</include>
 						<texture colordiffuse="button_focus">masks/focus-long.png</texture>
 					</control>
 					<control type="image">
@@ -152,6 +153,7 @@
 						<right>0</right>
 						<height>71</height>
 						<visible>Control.HasFocus(451)</visible>
+						<include>NetoFocus_14</include>
 						<texture colordiffuse="button_focus">masks/focus-long.png</texture>
 					</control>
 					<control type="image">

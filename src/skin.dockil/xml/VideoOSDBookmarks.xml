@@ -106,6 +106,7 @@
 							<top>5</top>
 							<width>330</width>
 							<height>250</height>
+							<include>NetoFocus_27</include>
 							<texture border="3" colordiffuse="button_focus">masks/landscape.png</texture>
 							<visible>Control.HasFocus(11)</visible>
 						</control>

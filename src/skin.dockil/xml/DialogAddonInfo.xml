@@ -22,6 +22,7 @@
 					<width>695</width>
 					<height>375</height>
 					<label></label>
+					<include>NetoFocus_8</include>
 					<texturefocus colordiffuse="button_focus" border="21">masks/landscape.png</texturefocus>
 					<texturenofocus colordiffuse="button_focus2" border="21">masks/landscape-unfocused.png</texturenofocus>
 					<onup>50</onup>
@@ -112,6 +113,7 @@
 							<top>16</top>
 							<width>393</width>
 							<height>228</height>
+							<include>NetoFocus_9</include>
 							<texture border="8" colordiffuse="button_focus">masks/landscape.png</texture>
 						</control>
 						<control type="image">
@@ -273,6 +275,7 @@
 						<aligny>top</aligny>
 						<textcolor>unfocused_text</textcolor>
 						<focusedcolor>focused_text</focusedcolor>
+						<include>NetoFocus_10</include>
 						<texturefocus border="2" colordiffuse="button_focus">masks/landscape.png</texturefocus>
 						<texturenofocus border="2" colordiffuse="button_focus2">masks/landscape-unfocused.png</texturenofocus>
 						<textoffsetx>35</textoffsetx>

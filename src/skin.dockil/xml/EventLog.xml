@@ -69,6 +69,7 @@
 							<top>0</top>
 							<right>0</right>
 							<bottom>0</bottom>
+							<include>NetoFocus_1</include>
 							<texture colordiffuse="button_focus">masks/focus.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 						</control>
@@ -133,8 +134,10 @@
 						<aligny>top</aligny>
 						<textoffsetx>40</textoffsetx>
 						<texturenofocus />
+						<include>NetoFocus_12</include>
 						<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
 						<alttexturenofocus></alttexturenofocus>
+						<include>NetoFocus_20</include>
 						<alttexturefocus colordiffuse="button_focus">masks/focus.png</alttexturefocus>
 						<textoffsety>35</textoffsety>
 						<label>$LOCALIZE[31032]: $LOCALIZE[584]</label>
@@ -149,6 +152,7 @@
 						<height>110</height>
 						<aligny>top</aligny>
 						<texturenofocus />
+						<include>NetoFocus_12</include>
 						<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
 						<textoffsetx>40</textoffsetx>
 						<textoffsety>35</textoffsety>

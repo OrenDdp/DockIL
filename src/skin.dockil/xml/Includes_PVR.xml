@@ -132,6 +132,7 @@
 					<top>0</top>
 					<right>25</right>
 					<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+					<include>NetoFocus_1</include>
 					<texture colordiffuse="button_focus">masks/focus.png</texture>
 					<visible>Control.HasFocus($PARAM[list_id])</visible>
 				</control>
@@ -220,6 +221,7 @@
 					<left>0</left>
 					<right>0</right>
 					<bottom>0</bottom>
+					<include>NetoFocus_1</include>
 					<texture colordiffuse="button_focus">masks/focus.png</texture>
 					<visible>Control.HasFocus($PARAM[list_id])</visible>
 				</control>

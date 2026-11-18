@@ -88,6 +88,7 @@
 							<left>0</left>
 							<right>0</right>
 							<bottom>0</bottom>
+							<include>NetoFocus_1</include>
 							<texture colordiffuse="button_focus">masks/focus.png</texture>
 							<animation effect="fade" start="100" end="30" time="0" condition="!Control.HasFocus(20)">conditional</animation>
 						</control>

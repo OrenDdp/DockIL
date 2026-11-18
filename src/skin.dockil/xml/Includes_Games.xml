@@ -52,6 +52,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font25_title</font>
+					<include>NetoFocus_12</include>
 					<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
 					<texturenofocus />
 				</control>
@@ -102,6 +103,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font27</font>
+					<include>NetoFocus_12</include>
 					<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
 					<texturenofocus />
 				</control>

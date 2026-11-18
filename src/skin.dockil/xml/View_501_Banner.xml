@@ -76,6 +76,7 @@
 							<top>13</top>
 							<width>834</width>
 							<height>169.5</height>
+							<include>NetoFocus_28</include>
 							<texture border="8" colordiffuse="button_focus">masks/banner.png</texture>
 						</control>
 						<control type="image">

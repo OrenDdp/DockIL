@@ -210,6 +210,7 @@
 							<top>-10</top>
 							<width>595</width>
 							<height>100</height>
+							<include>NetoFocus_15</include>
 							<texture border="21" colordiffuse="button_focus">buttons/button-fo.png</texture>
 						</control>
 						<control type="label">
@@ -250,6 +251,7 @@
 								<top>-10</top>
 								<width>595</width>
 								<height>100</height>
+								<include>NetoFocus_15</include>
 								<texture border="21" colordiffuse="button_focus">buttons/button-fo.png</texture>
 							</control>
 							<control type="label">
@@ -342,6 +344,7 @@
 								<top>6</top>
 								<width>218</width>
 								<height>280</height>
+								<include>NetoFocus_16</include>
 								<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 								<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
 							</control>
@@ -469,6 +472,7 @@
 									<top>1</top>
 									<width>446</width>
 									<height>33</height>
+									<include>NetoFocus_1</include>
 									<texture colordiffuse="button_focus">masks/focus.png</texture>
 									<visible>Control.HasFocus(41)</visible>
 								</control>
